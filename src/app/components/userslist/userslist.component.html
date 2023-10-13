@@ -1,0 +1,31 @@
+<p>userslist works!</p>
+
+<small>Click on the ID to update/delete the user</small>
+<table class="table table-success table-hover">
+  <thead class="thead-dark">
+    <tr>
+    <td scope="col">#</td>
+    <td scope="col">Full Name</td>
+    <td scope="col">Email</td>
+    <td scope="col">Is Admin</td>
+    <td scope="col">Board Member</td>
+    <td scope="col">Is in Mailing List</td>
+    <td scope="col">Phone</td>
+    <td scope="col">Registered for this Season</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users" class="table-warning">
+      <td scope="row">
+        id: <a [routerLink]="['/users', user.id]">{{ user.id }}</a>
+      </td>
+      <td>{{user.firstname}} {{user.lastname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.isAdmin}}</td>
+      <td>{{user.isBoard}}</td>
+      <td>{{user.mailing}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.Season2022}}</td>
+    </tr>                    
+  </tbody>
+</table>

@@ -1,0 +1,162 @@
+<p>stringing works!</p>
+
+<button type="submit" class="btn btn-success" (click)="createStringing()">Add Stringing Order</button>
+<br><br>
+<small>Click on tde ID to update/delete tde string</small>
+
+<h3>{{sizeReceived}} rackets Received</h3>
+<table class="table table-striped table-dark" border="1">
+    <thead class="thead-dark">
+        <tr>
+        <td scope="col">#</td>
+        <td scope="col">Player Name</td>
+        <td scope="col">Racket Model</td>
+        <td scope="col">Tension Applied</td>
+        <td scope="col">String Model</td>
+        <td scope="col">String Packaging</td>
+        <td scope="col">Is Paid</td>
+        <!-- <td scope="col">Date Added</td> -->
+        <td scope="col">Status</td>
+        <td scope="col">Comment</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let string of strings">
+            <!-- <div *ngIf="string.paid==='N'"> -->
+                <td scope="row" *ngIf="string.status==='Receive'">
+                    id: <a [routerLink]="['/stringing', string.id]">{{ string.id }}</a>
+                    <button type="submit" class="btn btn-primary" (click)="doneString(string)">Done</button>
+                    <button *ngIf="string.paid==='N'" type="submit" class="btn btn-success" (click)="payString(string)">Pay</button>
+                </td>
+                <td *ngIf="string.status==='Receive'">{{string.player}}</td>
+                <td *ngIf="string.status==='Receive'">{{string.racket}}</td>
+                <td *ngIf="string.status==='Receive'">{{string.tension}}</td>
+                <td *ngIf="string.status==='Receive'">{{string.string}}</td>
+                <td *ngIf="string.status==='Receive'">{{string.stringType}}</td>
+                <td *ngIf="string.status==='Receive'">{{string.paid}}</td>
+                <!-- <td *ngIf="string.status==='Receive'">{{string.date_added}}</td> -->
+                <td *ngIf="string.status==='Receive'">{{string.status}}</td>
+                <td *ngIf="string.status==='Receive'">{{string.comment}}</td>
+            <!-- </div> -->
+        </tr>                    
+    </tbody>
+</table>
+<hr>
+<h3 class="strung">{{sizeStrung}} rackets Strung</h3>
+<table class="table table-striped" border="1">
+    <thead class="thead-dark">
+        <tr>
+        <td scope="col">#</td>
+        <td scope="col">Player Name</td>
+        <td scope="col">Racket Model</td>
+        <td scope="col">Tension Applied</td>
+        <td scope="col">String Model</td>
+        <td scope="col">String Packaging</td>
+        <td scope="col">Is Paid</td>
+        <!-- <td scope="col">Date Added</td>
+        <td scope="col">Done On</td> -->
+        <td scope="col">Status</td>
+        <td scope="col">Comment</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let string of strings">
+            <!-- <div *ngIf="string.paid==='N'"> -->
+                <td scope="row" *ngIf="string.status==='Strung'">
+                    id: <a [routerLink]="['/stringing', string.id]">{{ string.id }}</a>
+                    <button type="submit" class="btn btn-warning" (click)="releaseString(string)">Release</button>
+                    <button *ngIf="string.paid==='N'" type="submit" class="btn btn-success" (click)="payString(string)">Pay</button>
+                </td>
+                <td *ngIf="string.status==='Strung'">{{string.player}}</td>
+                <td *ngIf="string.status==='Strung'">{{string.racket}}</td>
+                <td *ngIf="string.status==='Strung'">{{string.tension}}</td>
+                <td *ngIf="string.status==='Strung'">{{string.string}}</td>
+                <td *ngIf="string.status==='Strung'">{{string.stringType}}</td>
+                <td *ngIf="string.status==='Strung'">{{string.paid}}</td>
+                <!-- <td *ngIf="string.status==='Strung'">{{string.date_added}}</td>
+                <td *ngIf="string.status==='Strung'">{{string.done}}</td> -->
+                <td *ngIf="string.status==='Strung'">{{string.status}}</td>
+                <td *ngIf="string.status==='Strung'">{{string.comment}}</td>
+            <!-- </div> -->
+        </tr>                    
+    </tbody>
+</table>
+<hr>
+<h3>{{sizeReleased}} rackets not Paid</h3>
+<table class="table table-striped table-dark" border="1">
+    <thead class="thead-dark">
+        <tr>
+        <td scope="col">#</td>
+        <td scope="col">Player Name</td>
+        <td scope="col">Racket Model</td>
+        <td scope="col">Tension Applied</td>
+        <td scope="col">String Model</td>
+        <td scope="col">String Packaging</td>
+        <td scope="col">Is Paid</td>
+        <!-- <td scope="col">Date Added</td>
+        <td scope="col">Done On</td> -->
+        <td scope="col">Status</td>
+        <td scope="col">Comment</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let string of strings">
+            <!-- <div *ngIf="string.paid==='N'"> -->
+                <td scope="row" *ngIf="string.paid==='N' && string.status==='Released'">
+                    id: <a [routerLink]="['/stringing', string.id]">{{ string.id }}</a>
+                    <button type="submit" class="btn btn-success" (click)="payString(string)">Pay</button>
+                </td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.player}}</td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.racket}}</td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.tension}}</td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.string}}</td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.stringType}}</td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.paid}}</td>
+                <!-- <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.date_added}}</td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.done}}</td> -->
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.status}}</td>
+                <td *ngIf="string.paid==='N' && string.status==='Released'">{{string.comment}}</td>
+            <!-- </div> -->
+        </tr>                    
+    </tbody>
+</table>
+
+<hr>
+<h3>History of Rackets Strung - {{sizeHistory}}</h3>
+<table class="table table-striped history" border="5">
+    <thead class="thead-dark">
+        <tr>
+        <td scope="col">#</td>
+        <td scope="col">Player Name</td>
+        <td scope="col">Racket Model</td>
+        <td scope="col">Tension Applied</td>
+        <td scope="col">String Model</td>
+        <td scope="col">String Packaging</td>
+        <td scope="col">Is Paid</td>
+        <td scope="col">Date Added</td>
+        <td scope="col">Done On</td>
+        <td scope="col">Status</td>
+        <td scope="col">Comment</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let string of strings">
+            <!-- <div *ngIf="string.paid==='N'"> -->
+                <td scope="row" *ngIf="string.paid==='Y' && string.status==='Released'">
+                    id: <a [routerLink]="['/stringing', string.id]">{{ string.id }}</a>
+                    <button type="submit" class="btn btn-danger" (click)="deleteString(string.id)">delete</button>
+                </td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.player}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.racket}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.tension}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.string}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.stringType}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.paid}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.date_added}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.done}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.status}}</td>
+                <td *ngIf="string.paid==='Y' && string.status==='Released'">{{string.comment}}</td>
+            <!-- </div> -->
+        </tr>                    
+    </tbody>
+</table>

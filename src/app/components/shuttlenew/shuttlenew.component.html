@@ -1,0 +1,33 @@
+<p>shuttlenew works!</p>
+
+<form #form="ngForm">
+    <div class="form-group">
+      <label for="firstname">First Name:</label>
+      <input [(ngModel)]="shuttle.firstname" type="text" class="form-control" id="firstname" name="firstname" >
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name:</label>
+      <input [(ngModel)]="shuttle.lastname" type="text" class="form-control" id="lastname" name="lastname" >
+    </div>
+    <div class="form-group">
+      <label for="tubesGiven">Tubes Given:</label>
+      <input [(ngModel)]="shuttle.tubesGiven" type="number" class="form-control" id="tubesGiven" name="tubesGiven" >
+    </div>
+    <div class="form-group">
+        <label for="Amount">Amount:</label>
+        <input [(ngModel)]="shuttle.amountPaid" type="number" class="form-control" id="amountPaid" name="amountPaid" >
+    </div>
+    <div class="form-group">
+        <label for="datePaid">Paid on:</label>
+        <input [(ngModel)]="shuttle.datePaid" type="text" class="form-control" id="datePaid" name="datePaid" >
+    </div>
+    <div class="form-group">
+        <label for="date_added">Date:</label>
+        <input [(ngModel)]="shuttle.date_added" type="text" class="form-control" id="date_added" name="date_added" >
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea [(ngModel)]="shuttle.comment" class="form-control" id="comment" name="comment"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="createShuttle(form.value)">Create</button>
+</form>

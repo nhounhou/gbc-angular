@@ -1,0 +1,15 @@
+.strung{
+    background-color: rgb(21, 114, 9);
+    color: white;
+    font-weight: bold;
+}
+
+.history{
+    background-color: rgb(221, 90, 141);
+    /* color: white; */
+    font-weight: bold;
+}
+
+button {
+    margin-left: 10px;
+}

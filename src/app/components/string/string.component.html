@@ -1,0 +1,48 @@
+<p>string works!</p>
+
+<form #form="ngForm">
+    <label for="id">id: {{string.id}}</label>
+    <div class="form-group">
+      <label for="player">Player Name:</label>
+      <input [(ngModel)]="string.player" type="text" class="form-control" id="player" name="player" >
+    </div>
+    <div class="form-group">
+      <label for="racket">Last Name:</label>
+      <input [(ngModel)]="string.racket" type="text" class="form-control" id="racket" name="racket" >
+    </div>
+    <div class="form-group">
+      <label for="tension">tension:</label>
+      <input [(ngModel)]="string.tension" type="number" class="form-control" id="tension" name="tension" >
+    </div>
+    <div class="form-group">
+        <label for="string">String:</label>
+        <input [(ngModel)]="string.string" type="text" class="form-control" id="string" name="string" >
+    </div>
+    <div class="form-group">
+        <label for="stringtype">String Type:</label>
+        <input [(ngModel)]="string.stringType" type="text" class="form-control" id="stringtype" name="stringtype" >
+    </div>
+    <div class="form-group">
+        <label for="paid">is Paid:</label>
+        <input [(ngModel)]="string.paid" type="text" class="form-control" id="paid" name="paid" >
+    </div>
+    <div class="form-group">
+        <label for="date_added">Date:</label>
+        <input [(ngModel)]="string.date_added" type="text" class="form-control" id="date_added" name="date_added" >
+    </div>
+    <div class="form-group">
+        <label for="done">Done On:</label>
+        <input [(ngModel)]="string.done" type="text" class="form-control" id="done" name="done" >
+    </div>
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <input [(ngModel)]="string.status" type="text" class="form-control" id="status" name="status" >
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea [(ngModel)]="string.comment" class="form-control" id="comment" name="comment"></textarea>
+    </div>
+    <button class="btn btn-outline-primary" type="button" (click)="goToHome()">Home Page</button>
+    <button type="submit" class="btn btn-success" (click)="updateString(form.value)">Update</button>
+    <button type="submit" class="btn btn-danger" (click)="deleteString()">Delete</button>
+  </form>

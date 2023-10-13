@@ -1,0 +1,48 @@
+<p>user works!</p>
+
+
+<div class="card" style="width: 18rem;">
+  <img src="../../../assets/GBC-noBackground.png" class="GBC Logo">
+  <div class="card-body">
+    <h3 class="card-title">Member details</h3>
+    <form #form="ngForm">
+      <!-- <label for="id">id: {{user.id}}</label> -->
+      <div class="form-group">
+        <label for="firstname">First Name:</label>
+        <input [(ngModel)]="user.firstname" type="text" class="form-control" id="firstname" name="firstname" >
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name:</label>
+        <input [(ngModel)]="user.lastname" type="text" class="form-control" id="lastname" name="lastname" >
+      </div>
+      <div class="form-group">
+        <label for="email">Emai Address:</label>
+        <input [(ngModel)]="user.email" type="email" class="form-control" id="email" name="email" >
+      </div>
+      <div class="form-group">
+        <label for="isAdmin">Is Admin:</label>
+        <input [(ngModel)]="user.isAdmin" type="number" min="0" max="1" class="form-control" id="isAdmin" name="isAdmin" >
+      </div>
+      <div class="form-group">
+        <label for="isBoard">Board Member:</label>
+        <input [(ngModel)]="user.isBoard" type="number" min="0" max="1" class="form-control" id="isBoard" name="isBoard" >
+      </div>
+      <div class="form-group">
+        <label for="isMailing">Is In Mailing List:</label>
+        <input [(ngModel)]="user.mailing" type="text" class="form-control" id="isMailing" name="isMailing" >
+      </div>
+      <div class="form-group">
+        <label for="Season2022">Registered for current Season:</label>
+        <input [(ngModel)]="user.Season2022" type="number" min="0" max="1" class="form-control" id="Season2022" name="Season2022" >
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input [(ngModel)]="user.phone" type="text" class="form-control" id="phone" name="phone" >
+      </div>
+      <!-- <button class="btn btn-outline-primary" type="button" (click)="goToHome()">Home Page</button> -->
+      <hr>
+      <button type="submit" class="btn btn-success" (click)="updateUser(form.value)">Update</button>
+      <button type="submit" class="btn btn-danger" (click)="deleteUser()">Delete</button>
+    </form>
+  </div>
+</div>

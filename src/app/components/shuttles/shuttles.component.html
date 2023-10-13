@@ -1,0 +1,35 @@
+<p>shuttles works!</p>
+
+<button type="submit" class="btn btn-success" (click)="createShuttle()">Add Shuttle Order</button>
+<br><br>
+<small>Click on the ID to update/delete the shuttle data</small>
+<div *ngFor="let shutt of shuttle" class="card" style="width: 18rem;">
+    <div *ngIf="!shutt.datePaid">
+        <div class="card-header">
+        id: <a [routerLink]="['/shuttles', shutt.id]">{{ shutt.id }}</a> {{shutt.firstname}} {{shutt.lastname}}
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item"># of Tubes: {{ shutt.tubesGiven }}</li>
+        <li class="list-group-item">date given : {{ shutt.dateGiven }}</li>
+        <li class="list-group-item">Amount : ${{ shutt.amountPaid }}</li>
+        <li class="list-group-item">Date paid : {{ shutt.datePaid }}</li>
+        <li class="list-group-item">date added : {{ shutt.date_added }}</li>
+        <li class="list-group-item">comment : {{ shutt.comment }}</li>
+        </ul>
+        <br>
+    </div>
+    <!-- <div *ngIf="shutt.datePaid">
+        <div class="card-header">
+        id: <a [routerLink]="['/shuttles', shutt.id]">{{ shutt.id }}</a> {{shutt.firstname}} {{shutt.lastname}}
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item"># of Tubes: {{ shutt.tubesGiven }}</li>
+        <li class="list-group-item">date given : {{ shutt.dateGiven }}</li>
+        <li class="list-group-item">Amount : ${{ shutt.amountPaid }}</li>
+        <li class="list-group-item">Date paid : {{ shutt.datePaid }}</li>
+        <li class="list-group-item">date added : {{ shutt.date_added }}</li>
+        <li class="list-group-item">comment : {{ shutt.comment }}</li>
+        </ul>
+        <br>
+    </div> -->
+</div>
