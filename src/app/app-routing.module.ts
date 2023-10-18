@@ -12,9 +12,12 @@ import { ShuttlesComponent } from './components/shuttles/shuttles.component';
 import { ShuttleComponent } from './components/shuttle/shuttle.component';
 import { ShuttlenewComponent } from './components/shuttlenew/shuttlenew.component';
 import { StringnewComponent } from './components/stringnew/stringnew.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  {path:'', component: HomepageComponent},
+  {path:'login', component: LoginComponent},
+  {path:'register', component: RegisterComponent},
   {path:'users', component: UserslistComponent},
   {path:'users/:id', component: UserComponent},
   {path:'register', component: CreateuserComponent},
@@ -25,6 +28,7 @@ const routes: Routes = [
   {path:'shuttles', component: ShuttlesComponent},
   {path:'shuttles/new', component: ShuttlenewComponent},
   {path:'shuttles/:id', component: ShuttleComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path:'**', component: NotfoundpageComponent}
 ];
 

@@ -1,6 +1,22 @@
+h3{
+    width: 25%;
+}
+
+.receive{
+    background-color: rgb(185, 153, 63);
+    color: black;
+    font-weight: bold;
+}
+
 .strung{
     background-color: rgb(21, 114, 9);
     color: white;
+    font-weight: bold;
+}
+
+.notPaid{
+    background-color: rgb(219, 115, 115);
+    color: black;
     font-weight: bold;
 }
 

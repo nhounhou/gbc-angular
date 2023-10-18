@@ -12,7 +12,7 @@ export class StringingComponent implements OnInit{
   strings:Stringing[] = [];
   displayed:boolean = false;
   today = new Date;
-  headers = ['id','player', 'racket', 'tension', 'string', 'stringType', 'paid', 'date_added', 'done', 'status', 'comment'];
+  // headers = ['id','player', 'racket', 'tension', 'string', 'stringType', 'paid', 'date_added', 'done', 'status', 'comment'];
   sizeReceived:number=0;
   sizeStrung:number=0;
   sizeReleased:number=0;
@@ -80,7 +80,7 @@ export class StringingComponent implements OnInit{
   }
 
   doneString(string:Stringing){
-    string.done = (this.today.getMonth()+1) + '/' + this.today.getDate() + '/' + this.today.getFullYear();
+    string.done = this.today.getFullYear() + '-' + this.today.getMonth()+1 + '-' + this.today.getDate();
     string.status = 'Strung';
     console.log(string);
     this.stringingService.updateString(string).subscribe(response=>{

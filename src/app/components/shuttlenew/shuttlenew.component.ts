@@ -25,7 +25,7 @@ export class ShuttlenewComponent {
 
   createShuttle(shuttle:Shuttle) {
     this.shuttleService.createShuttle(this.shuttle).subscribe(response=>{
-      alert(`The date for # ${this.shuttle.id} has been created`);
+      alert(`The shuttle order ${response.id} has been created`);
       this.router.navigate(['/shuttles']);
     })
   }

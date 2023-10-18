@@ -40,6 +40,8 @@ import { ShuttleComponent } from './components/shuttle/shuttle.component';
 import { ShuttlenewComponent } from './components/shuttlenew/shuttlenew.component';
 import { StringnewComponent } from './components/stringnew/stringnew.component';
 import { environment } from 'src/environments/environment';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 // FullCalendarModule.registerPlugins([
 //   interactionPlugin,
@@ -63,6 +65,8 @@ import { environment } from 'src/environments/environment';
     ShuttleComponent,
     ShuttlenewComponent,
     StringnewComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

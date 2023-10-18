@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./stringnew.component.css'],
 })
 export class StringnewComponent {
+  // today:Date = new Date();
+  // myDate:string = this.today.getMonth()+'/'+this.today.getDate()+'/'+this.today.getFullYear();
+
   string:Stringing = {
     id: 0,
     player: '',

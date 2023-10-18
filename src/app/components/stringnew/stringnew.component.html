@@ -46,8 +46,7 @@
           <label class="input-group-text" for="stringType">Packaging</label>
         </div>
         <select [(ngModel)]="string.stringType" class="custom-select" id="stringType" name="stringType">
-          <option selected>Choose...</option>
-          <option value="Reel">Reel</option>
+          <option value="Reel" selected>Reel</option>
           <option value="Pack">Pack</option>
           <option value="Bring">Member String</option>
         </select>
@@ -86,7 +85,7 @@
         <select [(ngModel)]="string.status" class="custom-select" id="status" name="status">
           <option value="Receive" selected>Receive</option>
           <option value="Strung">Strung</option>
-          <option value="Release">Release</option>
+          <option value="Released">Release</option>
         </select>
     </div>
 
